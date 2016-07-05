@@ -1,0 +1,53 @@
+@mixin calc-top($perc, $len) {
+    top: -webkit-calc(#{$perc} - #{$len});
+    top: -moz-calc(#{$perc} - #{$len});
+    top: calc(#{$perc} - #{$len});
+}
+
+@mixin calc-left($perc, $len) {
+    left: -webkit-calc(#{$perc} - #{$len});
+    left: -moz-calc(#{$perc} - #{$len});
+    left: calc(#{$perc} - #{$len});
+}
+
+@mixin calc-margin-left($perc, $len) {
+    margin-left: -webkit-calc(#{$perc} - #{$len});
+    margin-left: -moz-calc(#{$perc} - #{$len});
+    margin-left: calc(#{$perc} - #{$len});
+}
+@mixin calc-margin-right($perc, $len) {
+    margin-right: -webkit-calc(#{$perc} - #{$len});
+    margin-right: -moz-calc(#{$perc} - #{$len});
+    margin-right: calc(#{$perc} - #{$len});
+}
+@mixin calc-margin-top($perc, $len) {
+    margin-top: -webkit-calc(#{$perc} - #{$len});
+    margin-top: -moz-calc(#{$perc} - #{$len});
+    margin-top: calc(#{$perc} - #{$len});
+}
+@mixin calc-margin-bottom($perc, $len) {
+    margin-bottom: -webkit-calc(#{$perc} - #{$len});
+    margin-bottom: -moz-calc(#{$perc} - #{$len});
+    margin-bottom: calc(#{$perc} - #{$len});
+}
+
+@mixin calc-width($perc, $len) {
+    width: -webkit-calc(#{$perc} - #{$len});
+    width: -moz-calc(#{$perc} - #{$len});
+    width: calc(#{$perc} - #{$len});
+}
+
+@mixin calc-height($perc, $len) {
+    height: -webkit-calc(#{$perc} - #{$len});
+    height: -moz-calc(#{$perc} - #{$len});
+    height: calc(#{$perc} - #{$len});
+}
+
+//lenear gradient from top to bottom
+@mixin lg-top-bottom($top, $bottom) {
+    background: -webkit-linear-gradient($top, $bottom);
+    background: -o-linear-gradient($top, $bottom);
+    background: -moz-linear-gradient($top, $bottom);
+    background: linear-gradient($top, $bottom);
+}
+

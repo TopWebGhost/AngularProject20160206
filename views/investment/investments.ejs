@@ -1,0 +1,26 @@
+<h1>Create New Investment</h1>
+<div ng-controller="InvestmentController as InvestCtrl">
+  <form ng-submit="InvestCtrl.addInvestment()">
+    Name
+    <input ng-model="InvestCtrl.name" type="text" placeholder="Investment Name">
+    Closing Date
+    <input ng-model="InvestCtrl.modelStartDate" type="date">
+    Initial Investment Amount
+    <input ng-model="InvestCtrl.initalInvestmentAmount" type="number">
+    Number of Periods to Display
+    <input ng-model="InvestCtrl.numberOfPeriods" min="1" max="30" step="1" type="number">
+    Length Of Periods (days)
+    <input ng-model="InvestCtrl.lengthOfPeriods" min="1" max="365" step="1" type="number">
+    <input type="submit" value="Submit">
+  </form>
+  <h2>INVESTMENTS</h2>
+  <hr>
+ <div ng-repeat="investment in InvestCtrl.investments">
+ </hr>
+   <div>{{investment}}</div>
+    <% include ../fileupload.ejs %>
+    <% include ../tenant/tenants.ejs %>
+  </hr>
+    <% include ../expense/expenses.ejs %>
+ </div>
+</div>

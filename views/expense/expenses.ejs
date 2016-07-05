@@ -1,0 +1,31 @@
+<div ng-controller="ExpenseController as ExpenseCtrl">
+<h3>EXPENSES</h3>
+  <div ng-repeat="expense in investment.expenses">
+    {{expense}}
+  </div>
+  <form ng-submit="ExpenseCtrl.addExpense(investment)">
+    expenseCategory<input ng-model="ExpenseCtrl.expenseCategory" type="text" placeholder="expenseCategory">
+
+    expensesSubCategory<input ng-model="ExpenseCtrl.expensesSubCategory" type="text" placeholder="expensesSubCategory">
+
+    expenseStart<input ng-model="ExpenseCtrl.expenseStart" type="date">
+
+    expenseInitalAmount<input ng-model="ExpenseCtrl.expenseInitalAmount" type="number" placeholder="expenseInitalAmount">
+
+    expenseRepeat<input ng-model="ExpenseCtrl.expenseRepeat" type="number" placeholder="expenseRepeat">
+
+    expenseFixedVariable<input ng-model="ExpenseCtrl.expenseFixedVariable" type="select" placeholder="expenseFixedVariable">
+
+    expenseYoYChange<input ng-model="ExpenseCtrl.expenseYoYChange" type="number" placeholder="expenseYoYChange">
+
+    expenseSpikeOnDate<input ng-model="ExpenseCtrl.expenseSpikeOnDate" type="date" placeholder="expenseSpikeOnDate">
+
+    expenseSpikeEndDate<input ng-model="ExpenseCtrl.expenseSpikeEndDate" type="date" placeholder="expenseSpikeEndDate">
+
+    expenseSpike<input ng-model="ExpenseCtrl.expenseSpike" type="number" placeholder="expenseSpike">
+
+    <input type="submit" name="Submit Expense">
+  </form>
+  <% include ../fileupload.ejs %>
+</hr>
+</div>

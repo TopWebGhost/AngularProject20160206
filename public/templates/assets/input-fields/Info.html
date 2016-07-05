@@ -1,0 +1,84 @@
+<form class="input-fields-form animate-if" ng-if="detail.showInputFields" ng-submit="vm.saveInfoDetail($event, detail)">
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Investment Name</label>
+            <input type="text" class="form-control" ng-model="detail.investmentName" placeholder="Enter Investment Name">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Ownership Entity Name</label>
+            <input type="text" class="form-control" ng-model="detail.ownershipEntityName" placeholder="Enter Entity Name">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Previous Owner Name</label>
+            <input type="text" class="form-control" ng-model="detail.previousOwnerName" placeholder="Enter Previous Owner">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Purchase Price</label>
+            <input type="number" class="form-control" ng-model="detail.purchasePrice" placeholder="Enter Purchase Price">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Closing Date</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Closing Date" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.closingDate" is-open="vm.closing_date.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="vm.dateOptions" date-disabled="vm.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="vm.open('closing_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Property Type</label>
+            <select class="form-control" ng-model="detail.propertyType" ng-options="property.name for property in detail.propertyTypes track by property.id"></select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Year Built</label>
+            <p class="input-group">
+              <input type="number" placeholder="Select Year Built" class="form-control" uib-datepicker-popup="yyyy" ng-model="detail.yearBuilt" is-open="vm.year_built.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="vm.dateOptions" date-disabled="vm.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="vm.open('year_built')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Year Renovated</label>
+            <p class="input-group">
+              <input type="number" placeholder="Select Year Renovated" class="form-control" uib-datepicker-popup="yyyy" ng-model="detail.yearRenovated" is-open="vm.year_renovated.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="vm.dateOptions" date-disabled="vm.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="vm.open('year_renovated')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Cost of Renovation</label>
+            <input type="text" class="form-control" ng-model="detail.costOfRenovation" placeholder="Enter Cost Renovation">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" ng-model="detail.address" placeholder="Enter Address">
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Zip Code</label>
+            <input type="text" class="form-control" ng-model="detail.zipCode" placeholder="Enter Zip Code">
+        </div>
+        <div class="col-md-6 form-group">
+          <!--  City:{{vm.city}}  -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 form-group">
+            <label>Overview Comment</label>
+            <input type="text" class="form-control" ng-model="detail.overviewComment" placeholder="Enter Overview Comment">
+        </div>
+    </div>
+    <div ng-include="'templates/assets/input-fields/bottom-buttons.html'"></div>
+</form>
+
+

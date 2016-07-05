@@ -1,0 +1,92 @@
+
+.asset-list{
+    width: 100%!important;
+    z-index: 9;
+    overflow: hidden;
+    .asset-section{
+        background-color: #f9f9f9;
+        border-top: 1px solid #ccc;
+        z-index: 9;
+        >.header{
+             background-color: #f3f3f3;
+        }
+
+        &.active{
+            &>.header{
+                 position: fixed;
+                 width: 100%;
+                 z-index: 100000;
+                 background-color: #f3f3f3;
+            }
+            .category-section.index-0{
+                margin-top: 100px;
+            }
+        }
+        .header{
+            line-height: 50px;
+            padding: 0 15px;
+            z-index: 99999;
+            overflow: hidden;
+
+        }
+
+        .category-section{
+            margin-left: 90px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ccc;
+
+            &.info{
+                  
+            }
+            &.gmap{
+                height: 80px;
+            }
+            &.market{
+                /* Market header styles goes here */
+            }
+            &.cashflow{
+                /* Cashflow header styles goes here */
+            }
+
+            .subcategory-section, .cashflow-subdetail, .expense-detail {
+                margin-left: $levelMargin;
+                background-color: #f9f9f9;
+                border-top: 1px solid #ccc;
+                @include calc-width(100%, $levelMargin);
+                float: left;
+
+                &.cashflow{
+                    float: none;
+                }
+
+                .button-items{
+                    margin-right: 15px;
+                    padding-top: 9px;
+                }
+                .expense {
+                  
+                }
+            }
+            .add-detail-toolbar {
+                background-color: #f9f9f9;
+                @include calc-width(100%, $levelMargin);
+                clear: both;
+                float: left;
+                margin: 5px 15px 10px;
+            }
+            .bottom-buttons{
+                margin-left: 15px;
+            }
+
+            .detail-header{
+                width: 250px;
+                margin-top: 10px;
+            }
+            .input-fields{
+                clear: both;
+                margin: 15px 0;
+            }
+        }
+    }
+}
+

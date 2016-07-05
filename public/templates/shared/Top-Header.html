@@ -1,0 +1,17 @@
+<header class="main-header">
+    <div class="logo">
+        <span class="glyphicon glyphicon-align-justify"></span>
+        <span class="text">LOGO</span>
+    </div>
+    <div class="user-info">
+        Welcome, Casey Panzer
+    </div>
+    <div class="pull-right">
+        <div class="search-bar-containter">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Enter Search Term">
+            </div>
+        </div>
+        <div ng-if="vm.currentUser" class="logout"><a ng-click="vm.logout()">Log Out</a></div>
+    </div>
+</header>

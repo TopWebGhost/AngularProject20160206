@@ -1,0 +1,106 @@
+<form class="input-fields-form animate-if" ng-if="detail.showInputFields" ng-submit="vm.saveMarketDetail($event, detail)">
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Project Name</label>
+            <input type="text" class="form-control" ng-model="detail.projectName" placeholder="Enter Project Name">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" ng-model="detail.address" placeholder="Enter Address">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Zip Code</label>
+            <input type="text" class="form-control" ng-model="detail.zipCode" placeholder="Enter Zip Code">
+        </div>
+        <div class="col-md-3 form-group">
+            City: {{detail.city}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Project Type</label>
+            <input type="text" class="form-control" ng-model="detail.projectType" placeholder="Enter Project Type">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Project Size</label>
+            <input type="number" class="form-control" ng-model="detail.projectSize" placeholder="Enter Project Size">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Project Units</label>
+            <input type="text" class="form-control" ng-model="detail.projectUnits" placeholder="Enter Project Units">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Occupancy</label>
+            <input type="number" class="form-control" ng-model="detail.occupancy" placeholder="Enter Occupancy">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Tenant Name</label>
+            <input type="text" class="form-control" ng-model="detail.tenantName" placeholder="Enter Tenant Name">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Tenant Type</label>
+            <select class="form-control" ng-model="detail.tenantType" ng-options="tenant.name for tenant in detail.tenantTypes track by tenant.id"></select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Leased Units</label>
+            <input type="number" class="form-control" ng-model="detail.leasedUnits" placeholder="Enter Leased Units">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Lease Signed</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Lease Signed" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.leaseSigned" is-open="vm.closing_date.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="vm.dateOptions" date-disabled="vm.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="vm.open('lease_signed')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row">Lease Terms</div>
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <label>Rent PSF</label>
+                    <input type="number" class="form-control" ng-model="detail.rentPSF" placeholder="Enter Rent PSF">
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Annual Bump</label>
+                    <input type="number" class="form-control" ng-model="detail.annualBumps" placeholder="Enter Annual Bump">
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Term</label>
+                    <input type="number" class="form-control" ng-model="detail.term" placeholder="Enter Term">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="row">Concessions</div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label>Free Rent</label>
+                    <input type="number" class="form-control" ng-model="detail.freeRent" placeholder="Enter Free Rent ">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label>Allownces PSF</label>
+                    <input type="number" class="form-control" ng-model="detail.allowancesPsf" placeholder="Enter Allownces PSF">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Source</label>
+            <input type="text" class="form-control" ng-model="detail.source" placeholder="Enter Source">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 form-group">
+            <label>Notes</label>
+            <input type="text" class="form-control" ng-model="detail.notes" placeholder="Enter Notes">
+        </div>
+    </div>
+    <div ng-include="'templates/assets/input-fields/bottom-buttons.html'"></div>
+</form>

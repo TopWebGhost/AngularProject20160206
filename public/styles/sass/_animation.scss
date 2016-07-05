@@ -1,0 +1,86 @@
+
+/**
+ *   Use class 'animate-if' for ng-if
+ */
+.animate-if.ng-enter, .animate-if.ng-leave {
+    -webkit-transition: $animDuration linear all;
+    -moz-transition: $animDuration linear all;
+    -ms-transition: $animDuration linear all;
+    -o-transition: $animDuration linear all;
+    transition: $animDuration linear all;
+}
+
+.animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+    height: 0px;
+    opacity: 0;
+    &.asset-section, &.category-section, &.subcategory-section, &.cashflow-subdetail, &.expense-detail{
+        height: 0px;
+    }
+    &.asset-section{
+      background-color: #f9f9f9!important;
+    }
+
+    &.tab{
+        line-height: 0px;
+        height: 0;
+    }
+
+    &.button-items{
+         margin-right: -159px!important;
+    }
+    &.input-fields-form{
+         height: 0px!important;
+         overflow: hidden;
+    }
+}
+
+.animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+    opacity: 1;
+    &.asset-section, &.category-section, &.subcategory-section, &.cashflow-subdetail, &.expense-detail{
+        height: $catHeaderHeight;
+    }
+    &.asset-section{
+      background-color: #f9f9f9!important;
+    }
+    &.tab{
+        line-height: $tabHeight;
+        height: $tabHeight;
+    }
+    &.button-items{
+        margin-right: 15px!important;
+    }
+    &.input-fields-form{
+         height: $detailHeight!important;
+         overflow: hidden;
+    }
+}
+
+
+/**
+ *   Use class 'animate-show' for ng-show
+ */
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+    -webkit-transition: $animDuration linear all;
+    -moz-transition: $animDuration linear all;
+    -ms-transition: $animDuration linear all;
+    -o-transition: $animDuration linear all;
+    transition: $animDuration linear all;
+}
+
+.animate-show.ng-hide {
+    height: 0;
+    opacity: 0;
+    &.tb-comments-placeholder, &.tb-scenarios-placeholder, &.tb-approval-placeholder, &.tb-files-placeholder{
+        height: 0px!important;
+    }
+}
+
+.animate-show {
+    height: 80px;
+    opacity: 1;
+    &.tb-comments-placeholder, &.tb-scenarios-placeholder, &.tb-approval-placeholder, &.tb-files-placeholder{
+        height: $commentsHeight!important;
+    }
+}
+

@@ -1,0 +1,34 @@
+{
+  "name": "equanimous-octo-duck",
+  "description": "real estate app",
+  "main": "server.js",
+  "authors": [
+    "Casey Panzer"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/caseypanzer/equanimous-octo-duck",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "~1.4.9",
+    "lodash": "~4.0.1",
+    "jquery": "~2.2.0",
+    "bootstrap": "~3.3.6",
+    "angular-animate": "~1.4.9",
+    "angular-ui-router": "~0.2.17",
+    "angular-cookies": "~1.4.9",
+    "moment": "~2.10.6",
+    "ng-file-upload": "~10.1.9",
+    "angular-bootstrap": "~1.1.2"
+  }
+}

@@ -1,0 +1,108 @@
+
+<form class="input-fields-form animate-if" ng-if="detail.showInputFields" ng-submit="vm.saveExpenseDetail($event, detail)">
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Tenant Name</label>
+            <input type="text" class="form-control" ng-model="detail.tenantName" placeholder="Enter Tenant Name">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Tenant Type</label>
+            <input type="text" class="form-control" ng-model="detail.tenantType" placeholder="Enter Tenant Type">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Leased Unit</label>
+            <input type="number" class="form-control" ng-model="detail.leasedUnits" placeholder="Enter Leased Unit">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Lease Signed</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Lease Commence" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.leaseSigned" is-open="detail.lease_signed.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('lease_signed')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 form-group">
+            <label>Lease Commence</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Lease Commence" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.leaseCommence" is-open="detail.lease_commence.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('lease_commence')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-4 form-group">
+            <label>Allownces PSF</label>
+            <input type="number" class="form-control" ng-model="detail.allowancesPsf" placeholder="Enter Allownces PSF">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Notes</label>
+            <input type="text" class="form-control" ng-model="detail.notes" placeholder="Enter Notes">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Payment Period's</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Period Start</div>
+                <div class="col-md-2">Period End</div>
+                <div class="col-md-2">Rent</div>
+                <div class="col-md-2">Rent Type</div>
+                <div class="col-md-2">Commission %</div>
+                <div class="col-md-2">Assumption?</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 form-group">
+            <label>Period Start</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Period Start" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.periodStart" is-open="detail.period_start.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('period_start')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-2 form-group">
+            <label>Period End</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Period End" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.periodEnd" is-open="detail.period_end.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('period_end')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-2 form-group">
+            <label>Rent</label>
+            <input type="number" class="form-control" ng-model="detail.rent" placeholder="Enter Rent">
+        </div>
+        <div class="col-md-2 form-group">
+            <label>Rent Type</label>
+            <input type="text" class="form-control" ng-model="detail.rentType" placeholder="Choose Rent Type">
+        </div>
+        <div class="col-md-2 form-group">
+            <label>Commission %</label>
+            <input type="number" class="form-control" ng-model="detail.commission" placeholder="Enter Commission %">
+        </div>
+        <div class="col-md-2 form-group">
+            <div class="radio">
+                <label>
+                    Assumption?<input ng-model="detail.assumption" "{{detail.assumption? 'checked' : ''}}" type="radio">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'templates/assets/input-fields/bottom-buttons.html'"></div>
+</form>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="RealEstateApp">
+  <head>
+    <meta charset="utf-8">
+    <title>RealEstate</title>
+    <link rel="stylesheet" href="/old/css/app.css">
+    <!-- libraries -->
+    <script type="text/javascript" src="/old/libs/angular/angular.min.js"></script>
+    <script src="/old/libs/ng-file-upload/ng-file-upload-shim.min.js"></script>
+        <!-- for no html5 browsers support -->
+    <script src="/old/libs/ng-file-upload/ng-file-upload.min.js"></script>
+    <!-- angular controllers -->
+    <script type="text/javascript" src="/old/js/app.js"></script>
+    <script type="text/javascript" src="/old/js/controllers/mainCtrl.js"></script>
+    <script type="text/javascript" src="/old/js/controllers/investmentCtrl.js"></script>
+    <script type="text/javascript" src="/old/js/controllers/tenantCtrl.js"></script>
+    <script type="text/javascript" src="/old/js/controllers/expenseCtrl.js"></script>
+    <script type="text/javascript" src="/old/js/controllers/fileCtrl.js"></script>
+  <body>
+    <h1>Real Estate App</h1>
+    <%- include investment/investments %>
+    <hr>
+  </body>
+</html>

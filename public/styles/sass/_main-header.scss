@@ -1,0 +1,51 @@
+.main-header {
+    background-color: #446182;
+    height: 52px;
+    position: fixed;
+    width: 100%;
+    color: #fff;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    .logo{
+        font-size: 20px;
+        padding: 15px;
+        width: 130px;
+        height: 100%;
+        float: left;
+        .glyphicon, .text{
+            float: left;
+        }
+        .text{
+            margin-left: 10px;
+        }
+    }
+    .user-info {
+        width: 200px;
+        float: left;
+        padding-top: 25px;
+    }
+    .pull-right{
+        margin: 8px 10px 0 0;
+        .search-bar-containter {
+            float: left;
+            width: 400px;
+            padding-right: 15px;
+            text-align: right;
+            vertical-align: middle;
+            line-height: 52px;
+        }
+        .search-bar {
+            float: left;
+            height: 20px;
+            width: 300px;
+            margin-top: 12.5px;
+        }
+        .logout{
+            float: right;
+            a{
+                color: #fff;
+            }
+        }
+    }
+}

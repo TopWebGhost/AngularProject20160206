@@ -1,0 +1,74 @@
+<form class="input-fields-form animate-if" ng-if="detail.showInputFields" ng-submit="vm.saveSalesDetail($event, detail)">
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Project Name</label>
+            <input type="text" class="form-control" ng-model="detail.projectName" placeholder="Enter Project Name">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" ng-model="detail.address" placeholder="Enter Address">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Zip Code</label>
+            <input type="text" class="form-control" ng-model="detail.zipCode" placeholder="Enter Zip Code">
+        </div>
+        <div class="col-md-3 form-group">
+            City: {{detail.city}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Project Type</label>
+            <input type="text" class="form-control" ng-model="detail.projectType" placeholder="Enter Project Type">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Project Size</label>
+            <input type="number" class="form-control" ng-model="detail.projectSize" placeholder="Enter Project Size">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Project Units</label>
+            <input type="text" class="form-control" ng-model="detail.projectUnits" placeholder="Enter Project Units">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Occupancy</label>
+            <input type="number" class="form-control" ng-model="detail.occupancy" placeholder="Enter Occupancy">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>NOI</label>
+            <input type="number" class="form-control" ng-model="detail.noi" placeholder="Enter NOI">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Seller</label>
+            <input type="text" class="form-control" ng-model="detail.seller" placeholder="Enter Seller">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Sale Date</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Sale Date" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.saleDate" is-open="detail.sale_date.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('sale_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Broker</label>
+            <input type="text" class="form-control" ng-model="detail.broker" placeholder="Enter Broker">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Sources</label>
+            <input type="text" class="form-control" ng-model="detail.sources" placeholder="Enter Source">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 form-group">
+            <label>Notes</label>
+            <input type="text" class="form-control" ng-model="detail.notes" placeholder="Enter Notes">
+        </div>
+    </div>
+    <div ng-include="'templates/assets/input-fields/bottom-buttons.html'"></div>
+</form>

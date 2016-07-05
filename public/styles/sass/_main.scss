@@ -1,0 +1,20 @@
+body {
+    min-width: 1024px;
+    width: 100%;
+
+    div[ui-view] {
+        padding-top: 52px;
+    }
+
+    .container-fluid, .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+

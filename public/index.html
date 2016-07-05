@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title>Test app</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/app.css" charset="utf-8">
+    <script src="dist/app.debug.js"></script>
+</head>
+<body ng-app="DemoApp" ng-controller="MainCtrl as vm">
+    <!-- Header -->
+    <top-header ng-if="vm.currentUser"></top-header>
+
+   <!-- ANGULAR DYNAMIC CONTENT -->
+    <div ui-view></div>
+
+</body>
+</html>

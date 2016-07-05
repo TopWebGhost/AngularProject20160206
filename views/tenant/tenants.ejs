@@ -1,0 +1,40 @@
+<h4>TENANTS</h4>
+  <div ng-controller="TenantController as TenantCtrl">
+    <div ng-repeat="tenant in investment.tenants">
+      <hr>
+      {{tenant}}
+      <% include ../fileupload.ejs %>
+
+              <h5>Rent Schedule</h5>
+              <div ng-repeat = "period in tenant.rents">
+                <p>{{period}}</p>
+              </div>
+              <form ng-submit="TenantCtrl.createPeriod(tenant)">
+                <p>New Rent Period</p>
+                startDate<input ng-model="TenantCtrl.startDate" type="date">
+                endDate<input ng-model="TenantCtrl.endDate" type="date">
+                rentAmount<input ng-model="TenantCtrl.rentAmount" type="number">
+                rentType<select ng-model ="TenantCtrl.rentType">
+                  <option value="Lump Sum">Lump Sum</option>
+                  <option value="PSF/Year">PSF/Year</option>
+                  <option value="PSF/Month">PSF/Month</option>
+                  <option value="PerMonth">Per Month</option>
+                </select>
+                commission<input ng-model="TenantCtrl.commission" type="number">
+                <input type="submit" value="Submit">
+              </form>
+              <hr>
+    </div>
+    <form ng-submit="TenantCtrl.addTenant()">
+      <p>New Tenant</p>
+      name<input ng-model="TenantCtrl.name" type="text" placeholder="Tenant Name">
+      units<input ng-model ="TenantCtrl.units" type="number" min="1" step="1">
+      rentDueDay<input ng-model ="TenantCtrl.rentDueDay" type="number" min="1" max="28" step="1">
+      rentFrequency<select ng-model ="TenantCtrl.rentFrequency">
+        <option value="RecurringMonthly">Recurring Monthly</option>
+        <option value="Custom">Custom</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+    <hr>
+  </div>

@@ -1,0 +1,117 @@
+
+<div class="row asset-toolbar" >
+    <div class="tabs">
+        <div ng-if="vm.showToolbar" class="tab animate-if" ng-click="vm.activateToolbarDetail($event, 'showComments')">Comments</div>
+        <div ng-if="vm.showToolbar" class="tab animate-if" ng-click="vm.activateToolbarDetail($event, 'showScenarios')">Scenarios</div>
+        <div ng-if="vm.showToolbar" class="tab animate-if" ng-click="vm.activateToolbarDetail($event, 'showApproval')">Approval</div>
+        <div ng-if="vm.showToolbar" class="tab animate-if" ng-click="vm.activateToolbarDetail($event, 'showFiles')">Files</div>
+    </div>
+
+    <div class="comments-height-calc"></div>
+
+    <div class="tb-comments-placeholder animate-show" ng-show="vm.showToolbar && vm.placeholders.showComments" ng-click="vm.onDetailClick($event)">
+        <div class="comments-section">
+            <div class="row comment" ng-repeat="comment in vm.comments" >
+                <div class="{{comment.self ? 'pull-left' : 'pull-right reverse'}}">
+                    <div class="pic" style="background-image: url('{{comment.thumbnail}}');"></div>
+                </div>
+                <div class="{{comment.self ? 'pull-right' : 'pull-left reverse'}}">
+                    <div class="row">
+                        <div class="name">{{comment.user}}</div>
+                        <div class="icons {{comment.self ? '' : 'reverse'}}">
+                            <span ng-if="!comment.edit" class="glyphicon glyphicon-pencil" title="Edit" ng-click="vm.editMode(comment)"></span>
+                            <span ng-if="comment.edit" class="glyphicon glyphicon-ok" ng-click="vm.saveComment(comment)" title="Save"></span>
+                            <span class="glyphicon glyphicon-remove-circle" ng-click="vm.removeComment($index)" title="Remove"></span>
+                        </div>
+                        <div class="time">{{comment.time}}</div>
+                    </div>
+                    <div ng-if="!comment.edit" class="row text">
+                        {{comment.text}}
+                   </div>
+                    <div ng-if="comment.edit" class="row text">
+                        <textarea rows="4" placeholder="New Comment" ng-model="comment.text">{{comment.text}}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="!vm.showNewcomment" ng-click="vm.clickComment()" >
+                <button type="button" class="btn btn-success">New Comment</button>
+            </div>
+            <div >
+                <div ng-show="vm.showNewcomment"><textarea rows="4" placeholder="New Comment"></textarea></div>
+
+                <div ng-show="vm.showNewcomment">
+                    <div class="row">
+                        <button type="button" class="btn btn-success">Submit</button>
+                        <button type="button" class="btn btn-warning">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="comments-categories">
+            <div class="row category" ng-class="{selected: category.selected}" ng-repeat="category in categories" ng-click="vm.loadCommentsForCategory($event, categories, category)">
+                {{category}}
+            </div>
+        </div> -->
+
+        <div class="comments-categories col-lg-4">
+            <div class="list-group">
+              <a href="#" class="list-group-item">General</a>
+              <a href="#" class="list-group-item">Market</a>
+              <a href="#" class="list-group-item">Revenues</a>
+              <a href="#" class="list-group-item">Expenses</a>
+              <a href="#" class="list-group-item">Sales</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="tb-scenarios-placeholder animate-show" ng-show="vm.showToolbar && vm.placeholders.showScenarios" ng-click="vm.onDetailClick($event)">Scenarios placeholder goes here</div>
+    <div class="tb-approval-placeholder animate-show" ng-show="vm.showToolbar && vm.placeholders.showApproval" ng-click="vm.onDetailClick($event)">Approval placeholder goes here</div>
+    <div class="tb-files-placeholder animate-show row" ng-show="vm.showToolbar && vm.placeholders.showFiles" ng-click="vm.onDetailClick($event)">
+
+        <div class="comments-section col-lg-9" style="padding:0px">
+
+           <div class="list-group">
+              <div class="list-group-item" ng-click="vm.toggleButton('firstfile')">
+                        <div>
+                            <div style="display:inline">
+                                <span >BRE Q3 Market Study.pdf</span>
+                            </div>                        
+                            <div class="pull-right" ng-show="vm.showFfilebutton">
+                                <a class="btn btn-warning">Edit</a>
+                                <a class="btn btn-danger">Delete</a>
+                            </div>
+                            <div>
+                                <span >casey panzer @ 10:30 AM</span>
+                            </div>
+                        </div>  
+              </div>
+              <div class="list-group-item" ng-click="vm.toggleButton('secondfile')">
+                    <div>
+                        <div style="display:inline">
+                            <span>BRE Q3 Market Study.pdf</span>
+                        </div>                        
+                        <div class="pull-right" ng-show="vm.showSfilebutton">
+                            <a class="btn btn-warning">Edit</a>
+                            <a class="btn btn-danger">Delete</a>
+                        </div>
+                        <div>
+                            <span>casey panzer @ 10:30 AM</span>
+                        </div>
+                    </div>
+              </div>
+            </div>
+
+        </div>
+        <div class="comments-categories col-lg-3"  style="padding:0px">
+            <div class="list-group">
+              <a href="#" class="list-group-item">General</a>
+              <a href="#" class="list-group-item">Market</a>
+              <a href="#" class="list-group-item">Revenues</a>
+              <a href="#" class="list-group-item">Expenses</a>
+              <a href="#" class="list-group-item">Sales</a>
+            </div>
+        </div>
+    </div>
+
+</div>

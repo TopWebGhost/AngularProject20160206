@@ -1,0 +1,262 @@
+[
+	{
+		"name": "Asset1",
+		"index": 1,
+		"visible": true,
+		"details":
+		[
+			{"name": "Info1", "type": "info", "details": [
+				{
+				    "investmentName": "First Investment", "ownershipEntityName": "Ownership Entity1", 
+				    "previousOwnerName": "Previus Owner1", "purchasePrice": 5444, "closingDate": "02/17/2016", 
+				    "propertyTypes": [{"id": 1, "name": "Property1"}, {"id": 2, "name": "Property2"}],
+				     "yearBuilt": 2015, "yearRenovated": 2016, "costOfRenovation": 5000, "address": "25/3, jackson road, NY",
+				     "zipCode": "255-554845", "overviewComment": "Simple comment1"
+				}]
+			},
+			{"name": "Google Map", "type": "gmap"},
+			{"name": "Market1", "type": "market", "details": [
+				{
+				    "projectName": "Project1", "address": "East Avenue, NY", "zipCode": "323-232323", "projectType": "Demo",
+				    "projectSize": 100, "projectUnits": "ProjectUnits1", "occupancy": 510, "tenantName": "Tenant1",
+				    "tenantTypes": [{"id": 1, "name": "Tenant Type1"}, {"id": 2, "name": "Tenant Type2"}],
+				    "leasedUnits": 11, "leaseSigned": "02/17/2016", "rentPSF": 222, "annualBumps": 122, "term": 2,
+				    "freeRent": 33, "allowancesPsf": 999, "source": "source1", "notes": "short note1"
+				},
+				{
+                    "projectName": "Project2", "address": "East Avenue, NY", "zipCode": "323-232323", "projectType": "Demo",
+                    "projectSize": 100, "projectUnits": "ProjectUnits1", "occupancy": 510, "tenantName": "Tenant1",
+                    "tenantTypes": [{"id": 1, "name": "Tenant Type1"}, {"id": 2, "name": "Tenant Type2"}],
+                    "leasedUnits": 11, "leaseSigned": "02/17/2016", "rentPSF": 222, "annualBumps": 122, "term": 2,
+                    "freeRent": 33, "allowancesPsf": 999, "source": "source1", "notes": "short note1"
+                },
+				{
+                    "projectName": "Project3", "address": "East Avenue, NY", "zipCode": "323-232323", "projectType": "Demo",
+                    "projectSize": 100, "projectUnits": "ProjectUnits1", "occupancy": 510, "tenantName": "Tenant1",
+                    "tenantTypes": [{"id": 1, "name": "Tenant Type1"}, {"id": 2, "name": "Tenant Type2"}],
+                    "leasedUnits": 11, "leaseSigned": "02/17/2016", "rentPSF": 222, "annualBumps": 122, "term": 2,
+                    "freeRent": 33, "allowancesPsf": 999, "source": "source1", "notes": "short note1"
+                }
+			]},
+			{"name": "Cashflow1", "type": "cashflow", "details": [
+
+				{"name": "Revenue1", "type": "revenue", "details": [
+					{
+					   "tenantName": "Tenant1", "tenantType": "Tenant Type1", "leasedUnits": 343, "leaseSigned": "02/17/2016",
+					   "leaseCommence": "02/17/2016", "allowancesPsf": 3434, "notes": "Revenue Note1", "periodStart": "02/17/2016",
+					   "periodEnd": "02/17/2016", "rent": 34343, "rentType": "Renttype 1", "commission": 25, "assumption": true
+					},
+					{
+                       "tenantName": "Tenant2", "tenantType": "Tenant Type1", "leasedUnits": 343, "leaseSigned": "02/17/2016",
+                       "leaseCommence": "02/17/2016", "allowancesPsf": 3434, "notes": "Revenue Note1", "periodStart": "02/17/2016",
+                       "periodEnd": "02/17/2016", "rent": 34343, "rentType": "Renttype 1", "commission": 25, "assumption": true
+                    },
+					{
+                       "tenantName": "Tenant3", "tenantType": "Tenant Type1", "leasedUnits": 343, "leaseSigned": "02/17/2016",
+                       "leaseCommence": "02/17/2016", "allowancesPsf": 3434, "notes": "Revenue Note1", "periodStart": "02/17/2016",
+                       "periodEnd": "02/17/2016", "rent": 34343, "rentType": "Renttype 1", "commission": 25, "assumption": true
+                    }
+				
+				]},
+				{"name": "Expense1", "type": "expense", "details": [
+					{
+						"name": "Detail1(Level1) of Expense1", "details": [
+							{
+							  "category": "Category1 of 1", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+							  "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+							  "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+							  "source": "source1", "date" : "02/17/2016", "amount": 445
+							},
+							{
+                              "category": "Category2  of 1", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+                              "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+                              "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+                              "source": "source1", "date" : "02/17/2016", "amount": 445
+                            },
+							{
+                              "category": "Category3  of 1", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+                              "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+                              "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+                              "source": "source1", "date" : "02/17/2016", "amount": 445
+                            }
+						]
+					},
+					{
+						"name": "Detail2(Level1) of Expense1", "details": [
+							{
+                              "category": "Category1 of 2", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+                              "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+                              "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+                              "source": "source1", "date" : "02/17/2016", "amount": 445
+                            },
+                            {
+                              "category": "Category2  of 2", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+                              "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+                              "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+                              "source": "source1", "date" : "02/17/2016", "amount": 445
+                            },
+                            {
+                              "category": "Category3  of 2", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+                              "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+                              "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+                              "source": "source1", "date" : "02/17/2016", "amount": 445
+                            }
+						]
+					},
+					{
+						"name": "Detail2(Level1) of Expense1", "details": [
+							{
+                              "category": "Category1 of 3", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+                              "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+                              "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+                              "source": "source1", "date" : "02/17/2016", "amount": 445
+                            },
+                            {
+                              "category": "Category2  of 3", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+                              "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+                              "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+                              "source": "source1", "date" : "02/17/2016", "amount": 445
+                            },
+                            {
+                              "category": "Category3  of 3", "subCategory": "Subcat1", "startDate": "02/17/2016", "oneTime": false,
+                              "expenseRepeat": 33, "initialAmount": 3434, "fixedVariable": "fixed-var1", "yOyChange": 1234,
+                              "spikeStartDate": "02/17/2016", "spikeEndDate": "02/17/2016", "spikeAmount": 3434,
+                              "source": "source1", "date" : "02/17/2016", "amount": 445
+                            }
+						]
+					}
+				]},
+				{"name": "Sales1", "type": "sales", "details": [
+					{
+					   "projectName": "Project1", "address": "Address1", "zipCode": "343-34345", "projectType": "Project Type1",
+					   "projectSize": 343, "projectUnits": "Unit1", "occupancy": 555, "noi": 4343, "seller": "Henry",
+					   "saleDate": "02/17/2016", "broker": "Broker1", "sources": "Source of sales", "notes": "note1"
+					},
+					{
+                       "projectName": "Project2", "address": "Address1", "zipCode": "343-34345", "projectType": "Project Type1",
+                       "projectSize": 343, "projectUnits": "Unit1", "occupancy": 555, "noi": 4343, "seller": "Henry",
+                       "saleDate": "02/17/2016", "broker": "Broker1", "sources": "Source of sales", "notes": "note1"
+                    },
+					{
+                       "projectName": "Project3", "address": "Address1", "zipCode": "343-34345", "projectType": "Project Type1",
+                       "projectSize": 343, "projectUnits": "Unit1", "occupancy": 555, "noi": 4343, "seller": "Henry",
+                       "saleDate": "02/17/2016", "broker": "Broker1", "sources": "Source of sales", "notes": "note1"
+                    }
+				]}
+			]}
+		]
+	},
+	{
+		"name": "Asset2",
+		"index": 2,
+		"visible": true,
+		"details": 
+		[
+			{"name": "Info2", "type": "info", "details": [
+				{"name": "Detail1 of Info2"}
+			
+			]},
+			{"name": "Google Map", "type": "gmap"},
+			{"name": "Market2", "type": "market", "details": [
+				{"name": "Detail1 of Market2"},
+				{"name": "Detail2 of Market2"},
+				{"name": "Detail3 of Market2"}
+			
+			]},
+			{"name": "Cashflow2", "type": "cashflow", "details": [
+				{"name": "Revenue2", "type": "revenue", "details": [
+					{"name": "Detail1 of Revenue2"},
+					{"name": "Detail2 of Revenue2"},
+					{"name": "Detail3 of Revenue2"}
+				
+				]},
+				{"name": "Expense2", "type": "expense", "details": [
+					{
+						"name": "Detail1(Level1) of Expense2", "details": [
+							{"name": "Detail1(Level2) of Expense1"},
+							{"name": "Detail2(Level2) of Expense1"},
+							{"name": "Detail3(Level2) of Expense1"}
+						]
+					},
+					{
+						"name": "Detail2(Level1) of Expense2", "details": [
+							{"name": "Detail1(Level2) of Expense1"},
+							{"name": "Detail2(Level2) of Expense1"},
+							{"name": "Detail3(Level2) of Expense1"}
+						]
+					},
+					{
+						"name": "Detail2(Level1) of Expense2", "details": [
+							{"name": "Detail1(Level2) of Expense1"},
+							{"name": "Detail2(Level2) of Expense1"},
+							{"name": "Detail3(Level2) of Expense1"}
+						]
+					}
+				]},
+				{"name": "Unlevered Cash Flow2", "type": "sales", "details": [
+					{"name": "Detail1 of Cash Flow2"},
+					{"name": "Detail2 of Cash Flow2"},
+					{"name": "Detail3 of Cash Flow2"}
+				
+				]}
+			]}
+		]
+	},
+	{
+		"name": "Asset3",
+		"index": 3,
+		"visible": true,
+		"details": 
+		[
+			{"name": "Info3", "type": "info", "details": [
+				{"name": "Detail1 of Info3"}
+			
+			]},
+			{"name": "Google Map", "type": "gmap"},
+			{"name": "Market3", "type": "market", "details": [
+				{"name": "Detail1 of Market3"},
+				{"name": "Detail2 of Market3"},
+				{"name": "Detail2 of Market3"}
+			
+			]},
+			{"name": "Cashflow3", "type": "cashflow", "details": [
+				{"name": "Revenue1", "type": "revenue", "details": [
+					{"name": "Detail1 of Revenue3"},
+					{"name": "Detail2 of Revenue3"},
+					{"name": "Detail2 of Revenue3"}
+				
+				]},
+				{"name": "Expense1", "type": "expense", "details": [
+					{
+						"name": "Detail1(Level1) of Expense3", "details": [
+							{"name": "Detail1(Level2) of Expense1"},
+							{"name": "Detail2(Level2) of Expense1"},
+							{"name": "Detail3(Level2) of Expense1"}
+						]
+					},
+					{
+						"name": "Detail2(Level1) of Expense3", "details": [
+							{"name": "Detail1(Level2) of Expense1"},
+							{"name": "Detail2(Level2) of Expense1"},
+							{"name": "Detail3(Level2) of Expense1"}
+						]
+					},
+					{
+						"name": "Detail2(Level1) of Expense3", "details": [
+							{"name": "Detail1(Level2) of Expense1"},
+							{"name": "Detail2(Level2) of Expense1"},
+							{"name": "Detail3(Level2) of Expense1"}
+						]
+					}
+				
+				]},
+				{"name": "Unlevered Cash Flow3", "type": "sales", "details": [
+					{"name": "Detail1 of Cash Flow3"},
+					{"name": "Detail2 of Cash Flow3"},
+					{"name": "Detail2 of Cash Flow3"}
+				
+				]}
+			]}
+		]
+	}
+]

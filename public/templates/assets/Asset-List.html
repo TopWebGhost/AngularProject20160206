@@ -1,0 +1,80 @@
+
+    <div class="container-fluid asset-list">
+
+       <div ng-if="asset.visible" class="asset-section animate-if {{asset.showDetail? 'active': ''}}" ng-repeat="asset in vm.assets">
+           <div class="header" ng-click="vm.showHideDetail($event, vm.assets, asset, 'asset')">
+               <!-- Please Add "Asset-header" htmls under this div -->
+               {{asset.name}}
+           </div>
+           <asset-toolbar showdetail="{{asset.showDetail}}"></asset-toolbar>
+
+           <div ng-if="asset.showDetail" class="category-section animate-if index-{{$index}}" ng-repeat="category in asset.details" ng-click="vm.showHideDetail($event, asset.details, category)">
+
+                   <div ng-include="vm.getTplFile(category.type, 'top-header')"></div>
+
+                   <!--Cashflow section -->
+                   <div ng-if="category.type == 'cashflow' && category.showDetail" class="subcategory-section animate-if index-{{$index}} {{category.type}}" ng-repeat="cashflowSubcategory in category.details" ng-click="vm.showHideDetail($event, category.details, cashflowSubcategory)">
+
+                       <div ng-include="vm.getTplFile(cashflowSubcategory.type, 'header')"></div>
+
+                       <!--Revenue/Unlevered Cash Flow(Sales) details -->
+                       <div ng-if="cashflowSubcategory.showDetail && cashflowSubcategory.type!='expense'" class="cashflow-subdetail animate-if index-{{$index}} section" ng-repeat="detail in cashflowSubcategory.details" ng-click="vm.showButtons($event, detail)">
+
+                           <div ng-include="vm.getTplFile(cashflowSubcategory.type, 'detail')"></div>
+
+                           <div class="pull-right button-items animate-if" ng-if="!!detail.showButtons">
+                               <button type="button" ng-if="!detail.mode" class="btn btn-default" ng-click="vm.showHideInputFields($event, cashflowSubcategory, detail, 'edit')">Edit Detail</button>
+                               <button type="button" class="btn btn-default" ng-click="vm.deleteCategory($event, cashflowSubcategory, $index)">Delete</button>
+                           </div>
+
+                           <div ng-include="vm.getTplFile(cashflowSubcategory.type, 'input-fields')"></div>
+
+                           <div ng-if="!cashflowSubcategory.addDetailOpened && $index === cashflowSubcategory.details.length - 1" class="add-detail-toolbar">
+                               <button type="button" ng-if="cashflowSubcategory.showDetail" class="btn btn-default" ng-click="vm.addDetail($event, cashflowSubcategory)">Add Detail</button>
+                           </div>
+                       </div>
+
+                       <!--Expense details -->
+                       <div ng-if="cashflowSubcategory.showDetail && cashflowSubcategory.type=='expense'" class="cashflow-subdetail animate-if index-{{$index}} section" ng-repeat="expense in cashflowSubcategory.details" ng-click="vm.showHideDetail($event, cashflowSubcategory.details, expense)">
+
+                           <div ng-include="'templates/assets/detail/ExpenseLevel1.html'"></div>
+
+                           <div ng-if="expense.showDetail" class="expense-detail animate-if index-{{$index}} section" ng-repeat="detail in expense.details" ng-click="vm.showButtons($event, detail)">
+
+                               <div class="tpl-include-div" ng-include="vm.getTplFile(cashflowSubcategory.type, 'detail')"></div>
+
+                               <div class="pull-right button-items animate-if" ng-if="!!detail.showButtons">
+                                   <button type="button" ng-if="!detail.mode" class="btn btn-default" ng-click="vm.showHideInputFields($event, expense, detail, 'edit')">Edit Detail</button>
+                                   <button type="button" class="btn btn-default" ng-click="vm.deleteCategory($event, expense, $index)">Delete</button>
+                               </div>
+
+                               <div ng-include="vm.getTplFile(cashflowSubcategory.type, 'input-fields')"></div>
+
+                               <div ng-if="!expense.addDetailOpened && $index === expense.details.length - 1" class="add-detail-toolbar">
+                                   <button type="button" ng-if="category.showDetail" class="btn btn-default" ng-click="vm.addDetail($event, expense)">Add Detail</button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!--Info/Market section -->
+                   <div ng-if="(category.type == 'info' || category.type == 'market') && category.showDetail" class="subcategory-section animate-if section index-{{$index}}" ng-repeat="detail in category.details" ng-click="vm.showButtons($event, detail)">
+
+                       <div ng-include="vm.getTplFile(category.type, 'detail')"></div>
+
+                       <div class="pull-right button-items animate-if" ng-if="!!detail.showButtons">
+                           <button type="button" ng-if="!detail.mode" class="btn btn-default" ng-click="vm.showHideInputFields($event, category, detail, 'edit')">Edit Detail</button>
+                           <button type="button" class="btn btn-default" ng-click="vm.deleteCategory($event, category, $index)">Delete</button>
+                       </div>
+
+                       <div ng-include="vm.getTplFile(category.type, 'input-fields')"></div>
+
+                       <div ng-if="!category.addDetailOpened && $index === category.details.length - 1" class="add-detail-toolbar">
+                           <button type="button" ng-if="category.showDetail" class="btn btn-default" ng-click="vm.addDetail($event, category)">Add Detail</button>
+                       </div>
+                   </div>
+
+               </div>
+
+       </div>
+    </div>

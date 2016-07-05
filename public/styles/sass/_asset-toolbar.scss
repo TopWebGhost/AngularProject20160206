@@ -1,0 +1,112 @@
+.asset-section.active{
+    .asset-toolbar{
+        margin-top: 50px;
+        background-color: #f9f9f9;
+    }
+}
+
+
+.asset-toolbar{
+    position: fixed;
+    width: 100%;
+    z-index: 100000;
+    padding: 7px 10px;
+
+    .tab{
+        float: left;
+        margin: 0px 5px;
+        height: $tabHeight;
+        line-height: $tabHeight;
+        width: calc(25% - 10px);
+        background-color: #d8d8d8;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .comments-height-calc{
+        color: transparent;
+        position: absolute;
+        top: -5000px;
+        right: 5000px;
+        width: calc(78% - 100px);
+        margin-left: 20px;
+    }
+
+    div[class*="-placeholder"] {
+        border: 1px solid #ccc;
+        background-color: #EFF1F9;
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .tb-comments-placeholder{
+        .comments-section{
+            float: left;
+            width: 78%;
+            height: 100%;
+            overflow: auto;
+        }
+        .comments-categories{
+            float: right;
+            width: 22%;
+            height: 100%;
+            overflow: auto;
+        }
+        .comment{
+            width: 100%;
+            padding: 5px 15px 5px 0;
+            border-bottom: 1px solid #fff;
+            margin: 0px;
+            .pull-left{
+                width: 60px;
+                margin-left: 20px;
+                &.reverse{
+                    width: calc(100% - 90px);
+                }
+            }
+            .pull-right{
+                width: calc(100% - 90px);
+                &.reverse{
+                    width: 60px;
+                    padding-left: 15px;
+                }
+            }
+            .pic{
+                padding: 5px 15px;
+                height: 40px;
+                background-repeat: no-repeat;
+                width: 40px;
+                background-size: contain;
+                border-radius: 50%;
+            }
+            .icons{
+                width: 150px;
+                float: left;
+                margin-left: calc(50% - 134px);
+                &.reverse{
+                    margin-left: calc(50% - 75px);
+                }
+            }
+            .name{
+                float: left;
+                text-align: left;
+            }
+            .time{
+                float: right;
+                text-align: right;
+            }
+        }
+        textarea{
+            width: 100%;
+        }
+        .category{
+            padding: 5px 10px;
+            border-bottom: 1px solid #fff;
+            margin: 0px;
+            &.selected{
+                background-color: #C5CEEE;
+            }
+        }
+    }
+
+}

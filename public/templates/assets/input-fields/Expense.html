@@ -1,0 +1,111 @@
+
+<form class="input-fields-form animate-if" ng-if="detail.showInputFields" ng-submit="vm.saveExpenseDetail($event, detail)">
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Category</label>
+            <input type="text" class="form-control" ng-model="detail.category" placeholder="Select Category">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Sub-Category</label>
+            <input type="text" class="form-control" ng-model="detail.subCategory" placeholder="Enter Sub-Category">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Start Date</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Start Date" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.startDate" is-open="detail.start_date.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('start_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-3 form-group">
+            <div class="radio">
+                <label>
+                    One Time?<input ng-model="detail.oneTime" "{{detail.oneTime? 'checked' : ''}}" type="radio">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Expense Repeat (Monthly)</label>
+            <input type="number" class="form-control" ng-model="detail.expenseRepeat" placeholder="Enter Expense Repeat">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Initial Amount</label>
+            <input type="number" class="form-control" ng-model="detail.initialAmount" placeholder="Enter Initial Amount">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Fixed/Variable</label>
+            <input type="text" class="form-control" ng-model="detail.fixedVariable" placeholder="Choose Fixed/Variable">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Y-o-Y Change</label>
+            <input type="number" class="form-control" ng-model="detail.yOyChange" placeholder="Enter Y-o-Y Change">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Spike Start Date</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Spike Start Date" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.spikeStartDate" is-open="detail.spike_start_date.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('spike_start_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Spike End Date</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Spike End Date" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.spikeEndDate" is-open="detail.spike_end_date.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('spike_end_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Spike Amount</label>
+            <input type="number" class="form-control" ng-model="detail.spikeAmount" placeholder="Enter Spike Amount">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    Expense Comps
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Source</div>
+                <div class="col-md-2">Date</div>
+                <div class="col-md-2">Amount</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Source</label>
+            <input type="text" class="form-control" ng-model="detail.source" placeholder="Enter Source">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Select Date</label>
+            <p class="input-group">
+              <input type="text" placeholder="Select Spike End Date" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="detail.date" is-open="detail.comps_date.opened" min-date="minDate" max-date="maxDate" 
+                datepicker-options="detail.dateOptions" date-disabled="detail.disabled(date, mode)" ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="detail.open('comps_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Amount</label>
+            <input type="number" class="form-control" ng-model="detail.amount" placeholder="Enter Amount">
+        </div>
+    </div>
+
+    <div ng-include="'templates/assets/input-fields/bottom-buttons.html'"></div>
+</form>
